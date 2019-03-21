@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.gracie.test1.mapper.ConselorMapper" >
+  <resultMap id="BaseResultMap" type="com.gracie.test1.domain.Conselor" >
+    <constructor >
+      <idArg column="csid" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="csname" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="cssex" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="csbirthday" jdbcType="DATE" javaType="java.util.Date" />
+      <arg column="csphone" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="role" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="vsremarks" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="valid" jdbcType="INTEGER" javaType="java.lang.Integer" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    csid, csname, cssex, csbirthday, csphone, role, vsremarks, valid
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from conselor
+    where csid = #{csid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from conselor
+    where csid = #{csid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.gracie.test1.domain.Conselor" >
+    insert into conselor (csid, csname, cssex, 
+      csbirthday, csphone, role, 
+      vsremarks, valid)
+    values (#{csid,jdbcType=INTEGER}, #{csname,jdbcType=VARCHAR}, #{cssex,jdbcType=INTEGER}, 
+      #{csbirthday,jdbcType=DATE}, #{csphone,jdbcType=INTEGER}, #{role,jdbcType=INTEGER}, 
+      #{vsremarks,jdbcType=VARCHAR}, #{valid,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.gracie.test1.domain.Conselor" >
+    insert into conselor
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="csid != null" >
+        csid,
+      </if>
+      <if test="csname != null" >
+        csname,
+      </if>
+      <if test="cssex != null" >
+        cssex,
+      </if>
+      <if test="csbirthday != null" >
+        csbirthday,
+      </if>
+      <if test="csphone != null" >
+        csphone,
+      </if>
+      <if test="role != null" >
+        role,
+      </if>
+      <if test="vsremarks != null" >
+        vsremarks,
+      </if>
+      <if test="valid != null" >
+        valid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="csid != null" >
+        #{csid,jdbcType=INTEGER},
+      </if>
+      <if test="csname != null" >
+        #{csname,jdbcType=VARCHAR},
+      </if>
+      <if test="cssex != null" >
+        #{cssex,jdbcType=INTEGER},
+      </if>
+      <if test="csbirthday != null" >
+        #{csbirthday,jdbcType=DATE},
+      </if>
+      <if test="csphone != null" >
+        #{csphone,jdbcType=INTEGER},
+      </if>
+      <if test="role != null" >
+        #{role,jdbcType=INTEGER},
+      </if>
+      <if test="vsremarks != null" >
+        #{vsremarks,jdbcType=VARCHAR},
+      </if>
+      <if test="valid != null" >
+        #{valid,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.gracie.test1.domain.Conselor" >
+    update conselor
+    <set >
+      <if test="csname != null" >
+        csname = #{csname,jdbcType=VARCHAR},
+      </if>
+      <if test="cssex != null" >
+        cssex = #{cssex,jdbcType=INTEGER},
+      </if>
+      <if test="csbirthday != null" >
+        csbirthday = #{csbirthday,jdbcType=DATE},
+      </if>
+      <if test="csphone != null" >
+        csphone = #{csphone,jdbcType=INTEGER},
+      </if>
+      <if test="role != null" >
+        role = #{role,jdbcType=INTEGER},
+      </if>
+      <if test="vsremarks != null" >
+        vsremarks = #{vsremarks,jdbcType=VARCHAR},
+      </if>
+      <if test="valid != null" >
+        valid = #{valid,jdbcType=INTEGER},
+      </if>
+    </set>
+    where csid = #{csid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.gracie.test1.domain.Conselor" >
+    update conselor
+    set csname = #{csname,jdbcType=VARCHAR},
+      cssex = #{cssex,jdbcType=INTEGER},
+      csbirthday = #{csbirthday,jdbcType=DATE},
+      csphone = #{csphone,jdbcType=INTEGER},
+      role = #{role,jdbcType=INTEGER},
+      vsremarks = #{vsremarks,jdbcType=VARCHAR},
+      valid = #{valid,jdbcType=INTEGER}
+    where csid = #{csid,jdbcType=INTEGER}
+  </update>
+</mapper>
