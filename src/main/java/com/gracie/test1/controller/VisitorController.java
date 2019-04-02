@@ -1,6 +1,7 @@
 package com.gracie.test1.controller;
 
 import com.gracie.test1.domain.Visitor;
+import com.gracie.test1.domain.VisitorDTO;
 import com.gracie.test1.mapper.VisitorMapper;
 import com.gracie.test1.service.VisitorService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +16,7 @@ public class VisitorController {
     private VisitorService visitorservice;
 
     @GetMapping("/")
-    public List<Visitor> showAllVisitor(){
+    public List<VisitorDTO> showAllVisitor(){
 
         return visitorservice.showAllVisitor();
 

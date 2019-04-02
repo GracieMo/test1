@@ -4,7 +4,6 @@ import com.gracie.test1.domain.Visitor;
 
 import java.util.List;
 
-
 public interface VisitorMapper {
     int deleteByPrimaryKey(Integer vsid);
 

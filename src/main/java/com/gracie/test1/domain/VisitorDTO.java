@@ -4,12 +4,20 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 import java.util.Date;
 
-public class Visitor {
+public class VisitorDTO {
+    private String edubackground;
+
+    private String marriage;
+
+    private String incomelevel;
+
+    private String health;
+
     private Integer vsid;
 
     private String vsname;
 
-    private Integer vssex;
+    private String vssex;
 
     @JsonFormat(locale="zh",timezone="GMT+8",pattern="yyyy-MM-dd")
     private Date vsbirthday;
@@ -20,15 +28,7 @@ public class Visitor {
 
     private String nation;
 
-    private Integer edubackground;
-
-    private Integer marriage;
-
     private String religion;
-
-    private Integer incomelevel;
-
-    private Integer health;
 
     private String emerperson;
 
@@ -44,30 +44,66 @@ public class Visitor {
 
     private Integer valid;
 
-    public Visitor(Integer vsid, String vsname, Integer vssex, Date vsbirthday, String vsphone, String vsnative, String nation, Integer edubackground, Integer marriage, String religion, Integer incomelevel, Integer health, String emerperson, Integer emerphone, String job, String unit, String address, String vsremarks, Integer valid) {
-        this.vsid = vsid;
-        this.vsname = vsname;
-        this.vssex = vssex;
-        this.vsbirthday = vsbirthday;
-        this.vsphone = vsphone;
-        this.vsnative = vsnative;
-        this.nation = nation;
-        this.edubackground = edubackground;
-        this.marriage = marriage;
-        this.religion = religion;
-        this.incomelevel = incomelevel;
-        this.health = health;
-        this.emerperson = emerperson;
-        this.emerphone = emerphone;
-        this.job = job;
-        this.unit = unit;
-        this.address = address;
-        this.vsremarks = vsremarks;
-        this.valid = valid;
+    public VisitorDTO(Visitor visitor){
+        this.vsid=visitor.getVsid();
+
+        this.vsname=visitor.getVsname();
+
+        this.vsbirthday=visitor.getVsbirthday();
+
+        this.vsphone=visitor.getVsphone();
+
+        this.vsnative=visitor.getvsnative();
+
+        this.nation=visitor.getNation();
+
+        this.religion=visitor.getReligion();
+
+        this.emerperson=visitor.getEmerperson();
+
+        this.emerphone=visitor.getEmerphone();
+
+        this.job=visitor.getJob();
+
+        this.unit=visitor.getUnit();
+
+        this.address=visitor.getAddress();
+
+        this.vsremarks= visitor.getVsremarks();
+
+        this.valid= visitor.getValid();
     }
 
-    public Visitor() {
-        super();
+    public String getEdubackground() {
+        return edubackground;
+    }
+
+    public void setEdubackground(String edubackground) {
+        this.edubackground = edubackground;
+    }
+
+    public String getMarriage() {
+        return marriage;
+    }
+
+    public void setMarriage(String marriage) {
+        this.marriage = marriage;
+    }
+
+    public String getIncomelevel() {
+        return incomelevel;
+    }
+
+    public void setIncomelevel(String incomelevel) {
+        this.incomelevel = incomelevel;
+    }
+
+    public String getHealth() {
+        return health;
+    }
+
+    public void setHealth(String health) {
+        this.health = health;
     }
 
     public Integer getVsid() {
@@ -86,11 +122,11 @@ public class Visitor {
         this.vsname = vsname;
     }
 
-    public Integer getVssex() {
+    public String getVssex() {
         return vssex;
     }
 
-    public void setVssex(Integer vssex) {
+    public void setVssex(String vssex) {
         this.vssex = vssex;
     }
 
@@ -110,11 +146,11 @@ public class Visitor {
         this.vsphone = vsphone;
     }
 
-    public String getvsnative() {
+    public String getVsnative() {
         return vsnative;
     }
 
-    public void setvsnative(String vsnative) {
+    public void setVsnative(String vsnative) {
         this.vsnative = vsnative;
     }
 
@@ -126,44 +162,12 @@ public class Visitor {
         this.nation = nation;
     }
 
-    public Integer getEdubackground() {
-        return edubackground;
-    }
-
-    public void setEdubackground(Integer edubackground) {
-        this.edubackground = edubackground;
-    }
-
-    public Integer getMarriage() {
-        return marriage;
-    }
-
-    public void setMarriage(Integer marriage) {
-        this.marriage = marriage;
-    }
-
     public String getReligion() {
         return religion;
     }
 
     public void setReligion(String religion) {
         this.religion = religion;
-    }
-
-    public Integer getIncomelevel() {
-        return incomelevel;
-    }
-
-    public void setIncomelevel(Integer incomelevel) {
-        this.incomelevel = incomelevel;
-    }
-
-    public Integer getHealth() {
-        return health;
-    }
-
-    public void setHealth(Integer health) {
-        this.health = health;
     }
 
     public String getEmerperson() {

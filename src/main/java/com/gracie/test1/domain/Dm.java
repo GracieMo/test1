@@ -7,9 +7,9 @@ public class Dm {
 
     private Integer dmm;
 
-    private Integer mc;
+    private String mc;
 
-    public Dm(Integer dmid, Integer dmx, Integer dmm, Integer mc) {
+    public Dm(Integer dmid, Integer dmx, Integer dmm, String mc) {
         this.dmid = dmid;
         this.dmx = dmx;
         this.dmm = dmm;
@@ -44,11 +44,11 @@ public class Dm {
         this.dmm = dmm;
     }
 
-    public Integer getMc() {
+    public String getMc() {
         return mc;
     }
 
-    public void setMc(Integer mc) {
+    public void setMc(String mc) {
         this.mc = mc;
     }
 }

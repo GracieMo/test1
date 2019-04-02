@@ -14,4 +14,7 @@ public interface DmMapper {
     int updateByPrimaryKeySelective(Dm record);
 
     int updateByPrimaryKey(Dm record);
+
+    String selectMc(Integer dmx,Integer dmm);
+
 }
